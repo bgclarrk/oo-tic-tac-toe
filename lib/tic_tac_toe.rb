@@ -51,11 +51,11 @@ class TicTacToe
         user_input = gets.chomp
         self.input_to_index(user_input)
         binding.pry
-        if self.valid_move?(@index)
+        if self.valid_move?(user_input.to_i - 1)
             if self.current_player == "X"
-                @board[@index] = "X"
+                @board[user_input.to_i - 1] = "X"
             else
-                @board[@index] = "O"
+                @board[user_input.to_i - 1] = "O"
             end
         else
             puts "Choose a space between 1 - 9"
